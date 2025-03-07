@@ -303,13 +303,7 @@ export default function Home() {
     
     const assignedPotions = new Set(bestAssignment.flat());
     const allPotionsAssigned = potions.every(p => assignedPotions.has(p.id));
-    
-    console.log('Best assignment validation:', {
-      bestAssignment,
-      assignedPotions: Array.from(assignedPotions),
-      potionIds: potions.map(p => p.id),
-      allPotionsAssigned
-    });
+  
 
     return (
       <div className={styles.bestSolution}>
