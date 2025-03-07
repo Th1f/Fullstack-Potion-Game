@@ -18,10 +18,9 @@ public class Graph {
     }
 
     public void addEdge(List<Integer> w) {
-        // Connect all pairs in the incompatibility group
         for (int i = 0; i < w.size(); i++) {
             for (int j = i + 1; j < w.size(); j++) {
-                int v1 = w.get(i) - 1; // Convert to 0-based index
+                int v1 = w.get(i) - 1; 
                 int v2 = w.get(j) - 1;
                 adj[v1].add(v2);
                 adj[v2].add(v1);

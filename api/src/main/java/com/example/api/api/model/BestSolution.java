@@ -22,11 +22,9 @@ public class BestSolution {
         this.incompatibilities = incompatibilities;
     }
 
-    // Default constructor for JSON serialization
     public BestSolution() {
     }
     
-    // Getters and setters
     public int getNumRooms() {
         return numRooms;
     }

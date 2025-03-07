@@ -25,7 +25,6 @@ public class DataController {
         @RequestParam int numIncompatibilities,
         @RequestParam String incompatibilities
     ) {
-        // Parse the incompatibilities string (format: "1,2;2,3;3,4")
         List<List<Integer>> incompatibilityGroups = Arrays.stream(incompatibilities.split(";"))
             .map(group -> Arrays.stream(group.split(","))
                 .map(Integer::parseInt)
@@ -47,10 +46,10 @@ public class DataController {
 		System.out.println("The number of required labels and the different room allocations are: ");
 		System.out.println(label);
         String bestRoomAssignment = "";
-		for (int i = 0; i < numRooms; i++) { //Best Case O(n^2), Worst case O(n^2)
+		for (int i = 0; i < numRooms; i++) { 
 			System.out.println("Room " + (i+1));
 			for (int j = 1; j <= numPotions; j++) {
-					if (assignRoom.get(j) == i) { //Complexity of HashMap.get O(1)
+					if (assignRoom.get(j) == i) {
 						System.out.print(j + " ");
                         bestRoomAssignment += j;
 					}
