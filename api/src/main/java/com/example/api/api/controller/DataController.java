@@ -25,17 +25,23 @@ public class DataController {
         @RequestParam int numIncompatibilities,
         @RequestParam String incompatibilities
     ) {
+        
         List<List<Integer>> incompatibilityGroups = Arrays.stream(incompatibilities.split(";"))
             .map(group -> Arrays.stream(group.split(","))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList()))
             .collect(Collectors.toList());
 
+        for(List<Integer> l : incompatibilityGroups){
+            for(int i = 0; i < l.size(); i++){
+                l.set(i, l.get(i));
+            }
+        }
+        System.out.println(incompatibilityGroups);
         Graph graph = new Graph(numPotions);
         HashMap<Integer, Integer> assignRoom = new HashMap<Integer, Integer>(); 
 
         for (List<Integer> group : incompatibilityGroups) {
-            System.out.println(group);
             graph.addEdge(group);
         }
 
@@ -54,11 +60,11 @@ public class DataController {
                         bestRoomAssignment += j;
 					}
 			}
-			System.out.println("0");
-            bestRoomAssignment += "0";
+			System.out.println(";");
+            bestRoomAssignment += ";";
 		}
         System.out.println(bestRoomAssignment);
         
-        return new BestSolution(numRooms, numPotions, numIncompatibilities, bestRoomAssignment);
+        return new BestSolution(label, bestRoomAssignment);
     }
 }

@@ -3,57 +3,33 @@ package com.example.api.api.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BestSolution {
-    @JsonProperty("numRooms")
-    private int numRooms;
+    @JsonProperty("leastAmountIncompatibilities")
+    private int leastAmountIncompatibilities;
     
-    @JsonProperty("numPotions")
-    private int numPotions;
+    @JsonProperty("bestRoomAssignment")
+    private String bestRoomAssignment;
     
-    @JsonProperty("numIncompatibilities")
-    private int numIncompatibilities;
-    
-    @JsonProperty("incompatibilities")
-    private String incompatibilities;
-    
-    public BestSolution(int numRooms, int numPotions, int numIncompatibilities, String incompatibilities) {
-        this.numRooms = numRooms;
-        this.numPotions = numPotions;
-        this.numIncompatibilities = numIncompatibilities;
-        this.incompatibilities = incompatibilities;
+    public BestSolution(int leastAmountIncompatibilities, String bestRoomAssignment) {
+        this.leastAmountIncompatibilities = leastAmountIncompatibilities;
+        this.bestRoomAssignment = bestRoomAssignment;
     }
 
     public BestSolution() {
     }
     
-    public int getNumRooms() {
-        return numRooms;
+    public int getLeastAmountIncompatibilities() {
+        return leastAmountIncompatibilities;
     }
 
-    public void setNumRooms(int numRooms) {
-        this.numRooms = numRooms;
+    public void setLeastAmountIncompatibilities(int leastAmountIncompatibilities) {
+        this.leastAmountIncompatibilities = leastAmountIncompatibilities;
     }
 
-    public int getNumPotions() {
-        return numPotions;
+    public String getBestRoomAssignment() {
+        return bestRoomAssignment;
     }
 
-    public void setNumPotions(int numPotions) {
-        this.numPotions = numPotions;
-    }
-
-    public int getNumIncompatibilities() {
-        return numIncompatibilities;
-    }
-
-    public void setNumIncompatibilities(int numIncompatibilities) {
-        this.numIncompatibilities = numIncompatibilities;
-    }
-
-    public String getIncompatibilities() {
-        return incompatibilities;
-    }
-
-    public void setIncompatibilities(String incompatibilities) {
-        this.incompatibilities = incompatibilities;
+    public void setBestRoomAssignment(String bestRoomAssignment) {
+        this.bestRoomAssignment = bestRoomAssignment;
     }
 }
