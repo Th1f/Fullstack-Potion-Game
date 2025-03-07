@@ -1,0 +1,258 @@
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  font-family: 'Press Start 2P', system-ui;
+}
+
+.gameContainer {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stats p {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.instructions {
+  color: #fff;
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.instructions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.instructions li {
+  margin: 0.5rem 0;
+}
+
+.gameBoard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.room {
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  position: relative;
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.roomNumber {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.potionsInRoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  height: 100%;
+  align-content: flex-start;
+}
+
+.room.dragOver {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.potionTrayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.potions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.potion, .placedPotion {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  cursor: grab;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.potion:hover, .placedPotion:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.potion.dragging, .placedPotion.dragging {
+  opacity: 0.5;
+}
+
+.potion.assigned {
+  opacity: 0.5;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.potion.assigned:hover {
+  transform: none;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.placedPotion.conflict {
+  border-color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { border-color: rgba(255, 68, 68, 0.5); }
+  50% { border-color: rgba(255, 68, 68, 1); }
+  100% { border-color: rgba(255, 68, 68, 0.5); }
+}
+
+.potionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.potionEmoji {
+  font-size: 1.5rem;
+}
+
+.potionName {
+  font-size: 0.5rem;
+  color: #fff;
+  text-align: center;
+}
+
+.newGameButton, .doneButton {
+  font-family: 'Press Start 2P', system-ui;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.7rem;
+  margin-left: 1rem;
+}
+
+.newGameButton:hover, .doneButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.newGameButton:active, .doneButton:active {
+  transform: translateY(0);
+}
+
+.doneButton {
+  font-family: 'Press Start 2P', system-ui;
+  background: rgba(255, 68, 68, 0.2);
+  border: 2px solid rgba(255, 68, 68, 0.4);
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.8rem;
+  min-width: 200px;
+}
+
+.doneButton:hover {
+  background: rgba(255, 68, 68, 0.3);
+  transform: translateY(-2px);
+}
+
+.doneButton:active {
+  transform: translateY(0);
+}
+
+.doneButton.success {
+  background: rgba(68, 255, 68, 0.2);
+  border-color: rgba(68, 255, 68, 0.4);
+}
+
+.doneButton.success:hover {
+  background: rgba(68, 255, 68, 0.3);
+}
+
+.dragImage {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  pointer-events: none;
+  border-radius: 8px;
+  background-color: #2c3e50;
+}
