@@ -199,12 +199,9 @@ export default function Home() {
   }, [level]);
 
   useEffect(() => {
-    
-    const hasSeenTutorial = localStorage.getItem('hasSeenTutorial');
-    if (!hasSeenTutorial) {
-      setShowHowToPlay(true);
-      localStorage.setItem('hasSeenTutorial', 'true');
-    }
+    // Always show the tutorial when the page loads
+    setShowHowToPlay(true);
+    // No need to check or set localStorage since we want to show it every time
   }, []);
 
   useEffect(() => {
