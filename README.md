@@ -8,7 +8,7 @@
   - Language: Java
   - Deployment: Docker + Render
   - Framework: Java Spring Boot + Maven
-- Credentials Management: Firebase Credentials
+- Packaging: Docker
 - Language Used
   - Java: API
   - HTML,CSS,TS: Frontend
