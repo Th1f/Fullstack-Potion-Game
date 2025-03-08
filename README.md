@@ -1,5 +1,6 @@
 # ⚗️ Potion Disaster - A Fullstack Web-based Puzzle Game
 ## Tech Stack
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 - Frontend
   - Deployment: Github Pages
   - Environment: Web-based application
@@ -12,6 +13,8 @@
 - Language Used
   - Java: API
   - HTML,CSS,TS: Frontend
+
+
 
 Potion Disaster is a **_Full-Stack_** web-based puzzle game where frontent is powered by **_Next.js_** framework and the API is powered by **_Spring Boot + Maven_** framework. The REST API is created to calculated the best solution for the following potion arrangement problem which involes **_Object Orientated Programming_** and **_Algorithms and Data Structures_**.
 > [!NOTE]
