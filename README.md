@@ -1,4 +1,4 @@
-# 🚀 Potion Disaster - A Fullstack Web-based Puzzle Game
+# ⚗️ Potion Disaster - A Fullstack Web-based Puzzle Game
 ## Tech Stack
 - Frontend
   - Deployment: Github Pages
